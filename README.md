@@ -13,7 +13,7 @@ MovieFlix is a movie discovery web application built with Angular that allows us
 - Angular
 - TypeScript
 - HTML, CSS
-- TMDB API
+- OMDB API
 
 ## Getting Started
 1. Clone the repository
