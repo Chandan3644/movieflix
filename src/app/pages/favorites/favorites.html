@@ -1,0 +1,21 @@
+<div class="favorites-container">
+
+  <h2>My Watchlist</h2>
+
+  <div class="empty" *ngIf="favorites.length === 0">
+    <p>No movies in your watchlist</p>
+    <a routerLink="/home">Browse Movies</a>
+  </div>
+
+ 
+  <div class="movie-grid" *ngIf="favorites.length > 0">
+    <app-movie-card
+      *ngFor="let movie of favorites"
+      [movie]="movie"
+      [showRemove]="true"
+      (remove)="remove(movie.imdbID)"
+      (click)="goToDetails(movie.imdbID)">
+    </app-movie-card>
+  </div>
+
+</div>

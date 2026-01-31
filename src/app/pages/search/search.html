@@ -1,0 +1,34 @@
+<app-header></app-header>
+
+<div class="search-container">
+
+  <h2 *ngIf="query">Search results for "{{ query }}"</h2>
+
+  <div *ngIf="!query && recentSearches.length">
+    <span
+      *ngFor="let item of recentSearches"
+      [routerLink]="['/search']"
+      [queryParams]="{ query: item }">
+      {{ item }}
+    </span>
+  </div>
+
+
+  <app-loader *ngIf="loading"></app-loader>
+
+
+  <div *ngIf="error">{{ error }}</div>
+
+  <div class="movie-grid" *ngIf="!loading && movies.length">
+    <app-movie-card
+      *ngFor="let movie of movies"
+      [movie]="movie">
+    </app-movie-card>
+  </div>
+
+
+  <button *ngIf="canLoadMore && !loading" (click)="loadMore()">
+    Load More
+  </button>
+
+</div>

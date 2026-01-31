@@ -1,0 +1,18 @@
+<div class="search-container">
+  <input
+    type="text"
+    placeholder="Search movies..."
+    [formControl]="searchControl"
+    class="search-input"
+  />
+
+  <span class="search-icon">🔍</span>
+
+  <button
+    class="clear-btn"
+    *ngIf="searchControl.value"
+    (click)="clearSearch()"
+  >
+    ✖
+  </button>
+</div>

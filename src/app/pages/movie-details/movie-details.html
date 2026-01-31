@@ -1,0 +1,38 @@
+<div class="details-container" *ngIf="!loading && movie">
+
+  <div class="hero">
+    <img
+      [src]="movie.Poster !== 'N/A' ? movie.Poster : 'assets/no-poster.png'"
+      alt="{{ movie.Title }}"
+    />
+
+    <div class="hero-info">
+      <h1>{{ movie.Title }} <span>({{ movie.Year }})</span></h1>
+
+      <div class="meta">
+        <span>{{ movie.Runtime | runtime }}</span>
+        <span>{{ movie.Genre }}</span>
+        <span>⭐ {{ movie.imdbRating }}</span>
+      </div>
+
+      <button (click)="toggleFavourite()">
+        {{ isFavourite ? 'Remove from Favourites' : 'Add to Favourites' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="details">
+    <h3>Plot</h3>
+    <p>{{ movie.Plot }}</p>
+
+    <div class="info-grid">
+      <div><strong>Director:</strong> {{ movie.Director }}</div>
+      <div><strong>Actors:</strong> {{ movie.Actors }}</div>
+      <div><strong>Released:</strong> {{ movie.Released }}</div>
+      <div><strong>Awards:</strong> {{ movie.Awards }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="status" *ngIf="loading">Loading movie details...</div>
+<div class="status error" *ngIf="error">{{ error }}</div>

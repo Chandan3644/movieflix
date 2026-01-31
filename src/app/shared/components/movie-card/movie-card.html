@@ -1,0 +1,21 @@
+<div class="movie-card" (click)="goToDetails()">
+
+  <img
+    [src]="movie?.Poster !== 'N/A' ? movie.Poster : 'assets/no-poster.png'"
+    [alt]="movie?.Title"
+    loading="lazy"
+  />
+
+  <div class="overlay">
+    <h3>{{ movie?.Title }}</h3>
+    <span>{{ movie?.Year }}</span>
+  </div>
+
+  <button
+    *ngIf="showRemove"
+    class="remove-btn"
+    (click)="removeMovie($event)">
+    ✕
+  </button>
+
+</div>

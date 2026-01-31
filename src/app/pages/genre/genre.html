@@ -1,0 +1,22 @@
+<div class="genre-container">
+
+  <h2>{{ genre | titlecase }} Movies</h2>
+
+  <div class="status error" *ngIf="error">{{ error }}</div>
+
+
+  <div class="movie-grid">
+    <app-movie-card
+      *ngFor="let movie of movies"
+      [movie]="movie">
+    </app-movie-card>
+  </div>
+
+
+  <div class="load-more" *ngIf="movies.length < totalResults">
+    <button (click)="loadMore()" [disabled]="loading">
+      {{ loading ? 'Loading...' : 'Load More' }}
+    </button>
+  </div>
+
+</div>

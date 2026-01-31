@@ -1,0 +1,10 @@
+<div class="section" *ngIf="movies && movies.length">
+  <h2>{{ title }}</h2>
+
+  <div class="movie-row">
+    <app-movie-card
+      *ngFor="let movie of movies"
+      [movie]="movie">
+    </app-movie-card>
+  </div>
+</div>
