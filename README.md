@@ -2,6 +2,10 @@
 
 MovieFlix is a movie discovery web application built with Angular that allows users to explore trending, popular, and top-rated movies with detailed information in a clean and responsive UI.
 
+## 🌐 Live Demo
+
+👉 https://chandan3644.github.io/movieflix/
+
 ## Features
 - Browse trending, popular & top-rated movies
 - Search movies
